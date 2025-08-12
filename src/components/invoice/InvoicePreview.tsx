@@ -15,7 +15,7 @@ const InvoicePreview = forwardRef<HTMLDivElement, Props>(({ bill, customer }, re
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <img src={logo} alt="Company logo" style={{ height: 36, width: 36 }} />
           <div>
-            <div style={{ fontWeight: 700 }}>Nimbus Invoices Pvt. Ltd.</div>
+            <div style={{ fontWeight: 700 }}>Tallyfixr Pvt. Ltd.</div>
             <div style={{ fontSize: 12, color: 'hsl(var(--muted-foreground))' }}>GSTIN: 27ABCDE1234F1Z5</div>
           </div>
         </div>
@@ -84,7 +84,7 @@ const InvoicePreview = forwardRef<HTMLDivElement, Props>(({ bill, customer }, re
       </div>
 
       <div style={{ marginTop: 24, fontSize: 12, color: 'hsl(var(--muted-foreground))' }}>
-        Nimbus Invoices Pvt. Ltd., 123 Business Park, Pune, MH
+        Tallyfixr Pvt. Ltd., 123 Business Park, Pune, MH
       </div>
     </div>
   );

@@ -8,8 +8,8 @@ const AppLayout = () => {
       <header className="sticky top-0 z-30 border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex items-center justify-between py-3">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Nimbus Invoices logo" className="h-7 w-7" loading="lazy" />
-            <span className="font-semibold">Nimbus Invoices</span>
+            <img src={logo} alt="Tallyfixr logo" className="h-7 w-7" loading="lazy" />
+            <span className="font-semibold">Tallyfixr</span>
           </Link>
           <nav className="flex items-center gap-1">
             <NavLink to="/dashboard">
@@ -42,7 +42,7 @@ const AppLayout = () => {
       </main>
       <footer className="border-t py-6">
         <div className="container mx-auto text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Nimbus Invoices — All rights reserved.
+          © {new Date().getFullYear()} Tallyfixr — All rights reserved.
         </div>
       </footer>
     </div>

@@ -14,7 +14,8 @@ const schema = z.object({
   gstin: z.string().min(5),
   email: z.string().email(),
   password: z.string().min(6),
-  logoUrl: z.string().optional(),
+  address: z.string().min(10),
+  pincode: z.string().min(6),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -132,12 +133,30 @@ const Register = () => {
               )}
             </div>
             <div>
-              <label className="block text-sm mb-1">Logo URL (Optional)</label>
+              <label className="block text-sm mb-1">Address</label>
               <Input 
                 type="url" 
-                {...register("logoUrl")} 
-                placeholder="Paste your company logo URL"
+                {...register("address")} 
+                placeholder="Paste your address"
               />
+              {errors.pincode && (
+                <p className="text-sm text-destructive mt-1">
+                  {errors.address.message}
+                </p>
+              )}
+            </div>
+            <div>
+              <label className="block text-sm mb-1">Pincode</label>
+              <Input 
+                type="url" 
+                {...register("pincode")} 
+                placeholder="Paste your pincode"
+              />
+              {errors.pincode && (
+                <p className="text-sm text-destructive mt-1">
+                  {errors.pincode.message}
+                </p>
+              )}
             </div>
             <Button 
               type="submit" 

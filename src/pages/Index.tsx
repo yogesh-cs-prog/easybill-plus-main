@@ -6,7 +6,7 @@ const Index = () => {
   return (
     <div className="relative min-h-screen overflow-hidden">
       <Helmet>
-        <title>Bill Management System | Invoices, Customers, GST</title>
+        <title>Tallyfixr  | Bill Management System</title>
         <meta name="description" content="Create GST-compliant invoices, manage customers, and track revenue with charts. Download professional PDFs." />
         <link rel="canonical" href="/" />
       </Helmet>
@@ -20,8 +20,8 @@ const Index = () => {
             Create invoices in seconds, manage customers, and visualize your growth with interactive charts. Export beautiful PDFs with your branding.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link to="/register"><Button variant="hero" size="lg">Get Started</Button></Link>
-            <Link to="/dashboard"><Button variant="outline" size="lg">Live Demo</Button></Link>
+            <Link to="/register"><Button variant="hero" size="lg">Create Account</Button></Link>
+            <Link to="/dashboard"><Button variant="outline" size="lg">Create Bill</Button></Link>
           </div>
         </div>
         <div className="rounded-xl border bg-card p-6 shadow-sm">

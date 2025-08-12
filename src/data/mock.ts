@@ -2,7 +2,7 @@ import type { Bill, Customer, UserProfile } from "@/types";
 
 export const mockUser: UserProfile = {
   id: "u_1",
-  companyName: "Nimbus Invoices Pvt. Ltd.",
+  companyName: "Tallyfixr Pvt. Ltd.",
   gstin: "27ABCDE1234F1Z5",
   email: "admin@nimbus.example",
 };
