@@ -135,11 +135,11 @@ const Register = () => {
             <div>
               <label className="block text-sm mb-1">Address</label>
               <Input 
-                type="url" 
+                type="text" 
                 {...register("address")} 
                 placeholder="Paste your address"
               />
-              {errors.pincode && (
+              {errors.address && (
                 <p className="text-sm text-destructive mt-1">
                   {errors.address.message}
                 </p>
@@ -148,7 +148,7 @@ const Register = () => {
             <div>
               <label className="block text-sm mb-1">Pincode</label>
               <Input 
-                type="url" 
+                type="number" 
                 {...register("pincode")} 
                 placeholder="Paste your pincode"
               />

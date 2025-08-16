@@ -1,8 +1,11 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-mark.png";
+import { useAuth } from "@/hooks/useAuth";
 
 const AppLayout = () => {
+      const { user, isAuthenticated, logout } = useAuth();
+  
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <header className="sticky top-0 z-30 border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -27,13 +30,19 @@ const AppLayout = () => {
                 <Button variant={isActive ? "secondary" : "ghost"} size="sm">Customers</Button>
               )}
             </NavLink>
-            <div className="w-px h-6 bg-border mx-2" />
-            <NavLink to="/login">
-              <Button variant="ghost" size="sm">Login</Button>
-            </NavLink>
-            <NavLink to="/register">
-              <Button variant="hero" size="sm">Register</Button>
-            </NavLink>
+            {user && (
+              <Button variant="ghost" size="sm" onClick={logout}>
+                Logout ({user.companyName})
+              </Button>
+            )}
+
+            {!isAuthenticated && (
+              <NavLink to="/login">
+                <Button variant="ghost" size="sm">Login</Button>
+              </NavLink>
+            )}
+
+        
           </nav>
         </div>
       </header>

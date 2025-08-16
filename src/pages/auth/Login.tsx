@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
 
 const schema = z.object({
   email: z.string().email(),
@@ -18,6 +19,7 @@ type FormData = z.infer<typeof schema>;
 const Login = () => {
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>({ resolver: zodResolver(schema) });
+  const { login } = useAuth();
 
   const onSubmit = async (data: FormData) => {
     try {
@@ -32,6 +34,8 @@ const Login = () => {
       if (!res.ok) {
         throw new Error(result.message || "Login failed");
       }
+
+      login(result.token, result.user);
 
       // Save token & user info
       localStorage.setItem("token", result.token);
