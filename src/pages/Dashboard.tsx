@@ -79,9 +79,9 @@ const Dashboard = () => {
 
         // Fetch all data in parallel
         const [billsRes, customersRes, monthlyRes] = await Promise.all([
-          axios.get<ApiResponse<Bill>>("http://localhost:5000/api/bills", { headers }),
-          axios.get<ApiResponse<Customer>>("http://localhost:5000/api/customers", { headers }),
-          axios.get<{data: MonthlyData[]}>("http://localhost:5000/api/statements/monthly", { headers })
+          axios.get<ApiResponse<Bill>>(`${import.meta.env.VITE_API_BASE_URL}/api/bills`, { headers }),
+          axios.get<ApiResponse<Customer>>(`${import.meta.env.VITE_API_BASE_URL}/api/customers`, { headers }),
+          axios.get<{data: MonthlyData[]}>(`${import.meta.env.VITE_API_BASE_URL}/api/statements/monthly`, { headers })
         ]);
 
         // Calculate totals

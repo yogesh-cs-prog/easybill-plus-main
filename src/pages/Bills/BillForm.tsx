@@ -68,7 +68,7 @@ const BillForm = () => {
         throw new Error("Authentication token not found");
       }
 
-      const response = await axios.post("http://localhost:5000/api/bills", {
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/bills`, {
         ...data,
         paymentStatus: "Pending",
       }, {

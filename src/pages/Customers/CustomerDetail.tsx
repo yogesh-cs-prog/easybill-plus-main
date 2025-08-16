@@ -43,14 +43,14 @@ const CustomerDetail = () => {
         const token = localStorage.getItem("token");
         
         // Fetch customer details
-        const customerResponse = await axios.get(`http://localhost:5000/api/customers/${id}`, {
+        const customerResponse = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/customers/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
         
         // Fetch customer's bills
-        const billsResponse = await axios.get(`http://localhost:5000/api/bills?customerId=${id}`, {
+        const billsResponse = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/bills?customerId=${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -38,7 +38,7 @@ const AddCustomer = () => {
         throw new Error('Authentication token not found');
       }
 
-      const response = await axios.post('http://localhost:5000/api/customers', data, {
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/customers`, data, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
